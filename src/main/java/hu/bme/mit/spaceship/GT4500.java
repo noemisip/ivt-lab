@@ -1,5 +1,7 @@
 package hu.bme.mit.spaceship;
 
+import javax.sound.sampled.BooleanControl;
+
 /**
 * A simple spaceship with two proton torpedo stores and four lasers
 */
@@ -77,6 +79,14 @@ public class GT4500 implements SpaceShip {
         break;
 
       case ALL:
+
+
+      boolean second = secondaryTorpedoStore.fire(secondaryTorpedoStore.getTorpedoCount());
+      boolean first = primaryTorpedoStore.fire(primaryTorpedoStore.getTorpedoCount());
+      if( first && second){
+        firingSuccess = true;
+
+       }
         // try to fire both of the torpedo stores
         //TODO implement feature
 
